@@ -1,3 +1,14 @@
+/**
+ * Projects Component - Portfolio Showcase
+ * 
+ * Displays featured projects with descriptions, tech stacks, and GitHub links.
+ * Each project card includes hover animations and external link functionality.
+ * Also provides a call-to-action to view all repositories on GitHub.
+ * 
+ * @component
+ * @returns {JSX.Element} Grid of featured projects with interactive cards
+ */
+
 import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 

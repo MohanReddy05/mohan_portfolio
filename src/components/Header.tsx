@@ -1,3 +1,14 @@
+/**
+ * Header Component - Fixed Navigation Bar
+ * 
+ * Fixed-position header with logo, navigation links, and theme toggle.
+ * Features glassmorphism styling and smooth scroll-to-top functionality.
+ * Includes responsive design with conditional text display on smaller screens.
+ * 
+ * @component
+ * @returns {JSX.Element} Fixed navigation header with interactive elements
+ */
+
 import ThemeToggle from './ThemeToggle'
 
 const Header = () => {

@@ -1,3 +1,14 @@
+/**
+ * ThemeToggle Component - Dark/Light Mode Switcher
+ * 
+ * Animated theme toggle button that switches between light and dark modes.
+ * Persists user preference in localStorage and respects system preferences.
+ * Features smooth rotation animation when toggling between sun and moon icons.
+ * 
+ * @component
+ * @returns {JSX.Element} Interactive theme toggle button
+ */
+
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiSun, FiMoon } from 'react-icons/fi'
@@ -6,7 +17,7 @@ const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    // Check localStorage and system preference
+    // Initialize theme based on localStorage or system preference
     const savedTheme = localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     

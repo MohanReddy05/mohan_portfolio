@@ -1,3 +1,14 @@
+/**
+ * Skills Component - Technical & Soft Skills Display
+ * 
+ * Showcases technical proficiency across programming languages, databases, libraries,
+ * visualization tools, and development environments. Also highlights key soft skills.
+ * Features animated skill cards with proficiency level indicators.
+ * 
+ * @component
+ * @returns {JSX.Element} Grid layout of technical and soft skills with progress bars
+ */
+
 import { motion } from 'framer-motion'
 import { SiPython, SiMysql, SiPostgresql, SiMongodb, SiPandas, SiNumpy, SiTableau, SiGithub, SiJupyter, SiLinux } from 'react-icons/si'
 import { BiCodeAlt, BiData, BiLineChart, BiWindows } from 'react-icons/bi'
@@ -32,7 +43,7 @@ const Skills = () => {
   return (
     <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12 border-t border-blueprint-line dark:border-dark-line bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
+        {/* Section header with numbering and title */}
         <div className="flex items-center gap-2 md:gap-4 mb-12 md:mb-16">
            <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-blueprint-line dark:border-dark-line text-xs md:text-base font-bold bg-white dark:bg-dark-surface transition-colors duration-300">01</div>
            <h2 className="text-lg md:text-2xl font-bold tracking-widest">TECHNICAL_STACK // CAPABILITIES</h2>

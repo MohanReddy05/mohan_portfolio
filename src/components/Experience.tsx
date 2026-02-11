@@ -1,3 +1,13 @@
+/**
+ * Experience Component - Professional Work History
+ * 
+ * Displays current work experience and key project accomplishments.
+ * Features detailed achievement lists and project highlights with animated reveals.
+ * 
+ * @component
+ * @returns {JSX.Element} Work experience and project showcase section
+ */
+
 import { motion } from 'framer-motion'
 import { BiBuildings, BiCalendar } from 'react-icons/bi'
 import { FiCheckCircle } from 'react-icons/fi'

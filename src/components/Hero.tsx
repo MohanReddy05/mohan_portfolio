@@ -1,4 +1,16 @@
+/**
+ * Hero Component - Landing Section
+ * 
+ * The main hero section displaying the developer's name, title, and core technologies.
+ * Features animated entrance effects, corner brackets for the schematic aesthetic,
+ * and interactive technology badges.
+ * 
+ * @component
+ * @returns {JSX.Element} Animated hero section with professional introduction
+ */
+
 import { motion } from 'framer-motion'
+import { personalConfig } from '../config/personal.config'
 
 const Hero = () => {
   return (
@@ -9,7 +21,7 @@ const Hero = () => {
          transition={{ duration: 1, ease: "easeOut" }}
          className="relative z-30 text-center p-6 md:p-12 max-w-5xl w-full mx-4"
        >
-          {/* Corner brackets - Smaller on mobile */}
+          {/* Decorative corner brackets for schematic design aesthetic */}
           <div className="absolute top-0 left-0 w-8 h-8 md:w-12 md:h-12 border-l-2 border-t-2 border-blueprint-line dark:border-dark-line transition-colors duration-300"></div>
           <div className="absolute top-0 right-0 w-8 h-8 md:w-12 md:h-12 border-r-2 border-t-2 border-blueprint-line dark:border-dark-line transition-colors duration-300"></div>
           <div className="absolute bottom-0 left-0 w-8 h-8 md:w-12 md:h-12 border-l-2 border-b-2 border-blueprint-line dark:border-dark-line transition-colors duration-300"></div>
@@ -43,7 +55,7 @@ const Hero = () => {
           >
               <div className="h-px w-12 md:w-16 bg-blueprint-line dark:bg-dark-line"></div>
               <p className="text-lg md:text-xl lg:text-2xl font-mono font-bold">
-                AI_ENGINEER // DATA_SCIENTIST
+                {personalConfig.title}
               </p>
               <div className="h-px w-16 bg-blueprint-line dark:bg-dark-line"></div>
           </motion.div>
@@ -54,19 +66,18 @@ const Hero = () => {
             transition={{ delay: 1 }}
             className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-gray-600 dark:text-gray-400 font-mono"
           >
-            <span>Bengaluru, India</span>
+            <span>{personalConfig.location}</span>
             <span>•</span>
-            <span>MIS Executive @ Puthur Infotech</span>
+            <span>{personalConfig.position} @ {personalConfig.company}</span>
           </motion.div>
 
-          {/* Tech Stack - Enhanced interactivity */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
             className="mt-8 md:mt-12 flex flex-wrap items-center justify-center gap-2 md:gap-3"
           >
-            {['Python', 'SQL', 'Machine Learning', 'PowerBI', 'Data Analysis'].map((tech, i) => (
+            {personalConfig.techStack.map((tech, i) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, y: 10 }}

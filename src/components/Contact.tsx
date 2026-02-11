@@ -1,33 +1,45 @@
+/**
+ * Contact Component - Communication Channels
+ * 
+ * Provides multiple contact methods including email, social media, and professional networks.
+ * Features interactive contact cards with hover effects and external link handling.
+ * Displays location information and availability status.
+ * 
+ * @component
+ * @returns {JSX.Element} Contact section with interactive communication channels
+ */
+
 import { motion } from 'framer-motion'
 import { FiMail, FiGithub, FiLinkedin, FiMapPin, FiInstagram } from 'react-icons/fi'
+import { personalConfig } from '../config/personal.config'
 
 const contactLinks = [
   {
     icon: FiMail,
     label: 'Email',
-    value: 'mohanreddymk05@gmail.com',
-    href: 'mailto:mohanreddymk05@gmail.com',
+    value: personalConfig.email,
+    href: `mailto:${personalConfig.email}`,
     color: 'blueprint-accent'
   },
   {
     icon: FiInstagram,
     label: 'Instagram',
-    value: '@mohan.pulikanti',
-    href: 'https://instagram.com/mohan.pulikanti',
+    value: `@${personalConfig.social.instagram.username}`,
+    href: personalConfig.social.instagram.url,
     color: 'blueprint-accent'
   },
   {
     icon: FiGithub,
     label: 'GitHub',
-    value: 'github.com/MohanReddy05',
-    href: 'https://github.com/MohanReddy05',
+    value: `github.com/${personalConfig.social.github.username}`,
+    href: personalConfig.social.github.url,
     color: 'blueprint-accent'
   },
   {
     icon: FiLinkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/mohan-pulikanti',
-    href: 'https://www.linkedin.com/in/mohan-pulikanti',
+    value: `linkedin.com/in/${personalConfig.social.linkedin.username}`,
+    href: personalConfig.social.linkedin.url,
     color: 'blueprint-accent'
   },
 ]
@@ -36,7 +48,6 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 md:py-24 px-4 md:px-6 lg:px-12 border-t border-blueprint-line dark:border-dark-line bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
        <div className="max-w-6xl mx-auto relative z-10">
-          {/* Section Header */}
           <div className="flex items-center gap-2 md:gap-4 mb-12 md:mb-16">
              <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-blueprint-line dark:border-dark-line text-xs md:text-base font-bold bg-white dark:bg-dark-surface transition-colors duration-300">05</div>
              <h2 className="text-lg md:text-2xl font-bold tracking-widest">CONTACT_CHANNEL // CONNECT</h2>
@@ -44,7 +55,6 @@ const Contact = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-             {/* Contact Info */}
              <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -53,11 +63,11 @@ const Contact = () => {
              >
                 <h3 className="text-4xl md:text-5xl font-bold mb-6">LET'S CONNECT</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed max-w-2xl mx-auto">
-                   Open for freelance opportunities, full-time roles in AI/Data Engineering, or technical consultation.
+                   {personalConfig.availability}
                 </p>
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-500">
                   <FiMapPin />
-                  <span>Bengaluru, India</span>
+                  <span>{personalConfig.location}</span>
                 </div>
              </motion.div>
                 

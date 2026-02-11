@@ -1,3 +1,13 @@
+/**
+ * Certificates Component - Professional Certifications Display
+ * 
+ * Showcases professional certifications with issuing organization and skills covered.
+ * Features an animated certificate card with skill badges in a responsive grid layout.
+ * 
+ * @component
+ * @returns {JSX.Element} Certificate showcase with associated skills
+ */
+
 import { motion } from 'framer-motion'
 import { FaCertificate } from 'react-icons/fa'
 import { BiCheck } from 'react-icons/bi'
